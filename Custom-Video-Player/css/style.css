@@ -86,7 +86,7 @@ h1 {
 
 .controls .timestamp {
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
   margin-left: 10px;
 }
 
@@ -94,7 +94,7 @@ h1 {
   outline: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .screen,
   .controls {
     width: 90%;
