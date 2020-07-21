@@ -96,13 +96,15 @@ button:focus {
 .swap-rate-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .rate {
   color: var(--prim-color);
   font-size: 0.8em;
   padding: 0 10px;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
