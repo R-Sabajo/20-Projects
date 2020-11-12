@@ -18,15 +18,16 @@ const wrongLetters = [];
 
 // show hidden word
 function displayWord() {
-  wordEl.innerHTML = ` ${selectedWord
+  const wordLettersCorrectArray = selectedWord
     .split('')
     .map(
       letter =>
         `<span class="letter"> ${
           correctLetters.includes(letter) ? letter : '_'
         }      </span> `
-    )
-    .join('')}  `;
+    );
+
+  wordEl.innerHTML = wordLettersCorrectArray.join('');
 
   // replace the newlines with regular spaces in the word element
   const innerWord = wordEl.innerText.replace(/\n/g, '');
@@ -56,13 +57,12 @@ function updateWrongLettersEl() {
       part.style.display = 'none';
     }
   });
+
   // Check if lost
   if (wrongLetters.length === figureParts.length) {
     finalMessage.innerText = `Helaas... je hebt verloren. 😢 \n het woord dat ik zocht was \n ${selectedWord}`;
     popup.style.display = 'flex';
   }
-
-  console.log(wrongLetters.length + ' ' + figureParts.length);
 }
 
 // function that shows a notification when a letter is already guessed.
