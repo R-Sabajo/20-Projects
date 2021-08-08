@@ -1,3 +1,9 @@
+body,
+html {
+  position: absolute;
+  inset: 0;
+}
+
 body {
   background-color: #34495e;
   color: white;
@@ -5,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   margin: 0;
   overflow: hidden;
 }
@@ -118,7 +124,7 @@ h1 {
   border-radius: 10px 10px 0 0;
   padding: 15px 20px;
   position: absolute;
-  bottom: -50px;
+  bottom: -60px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -127,7 +133,7 @@ h1 {
 }
 
 .notification-container.show {
-  transform: translateY(-50px);
+  transform: translateY(-60px);
 }
 
 .footer a {
@@ -137,5 +143,15 @@ h1 {
   transform: rotate(90deg);
   position: absolute;
   right: -80px;
-  top: 50%;
+  top: 80%;
+}
+
+@media screen and (max-width: 510px) {
+  .game-container {
+    padding: 15px 20px;
+    position: relative;
+    margin: auto;
+    min-height: 350px;
+    min-width: 350px;
+  }
 }
