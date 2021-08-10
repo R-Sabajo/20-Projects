@@ -9,6 +9,7 @@
 }
 
 body {
+  user-zoom: fixed;
   background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
@@ -20,13 +21,15 @@ body {
 }
 
 .container {
-  margin: 30px auto;
+  position: relative;
+  margin: 10px auto 30px;
   width: 350px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
+  padding: 20px 0;
 }
 
 h3 {
@@ -46,7 +49,7 @@ h4 {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .inc-exp-container > div {
@@ -76,6 +79,12 @@ label {
   margin: 10px 0;
 }
 
+.amount-info {
+  margin: 3px 0 0;
+  padding: 0;
+  font-size: 13px;
+}
+
 input[type='text'],
 input[type='number'] {
   border: 1px solid #dedede;
@@ -92,6 +101,7 @@ input[type='number'] {
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
+  border-radius: 3px;
   display: block;
   font-size: 16px;
   margin: 10px 0 30px;
@@ -147,4 +157,38 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+.newTransactionForm {
+  position: fixed;
+  background: #fff;
+  width: 370px;
+  height: 100vh;
+  padding: 10px;
+  top: 10px;
+  left: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.newTransactionForm.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.newTransactionForm h3 {
+  margin-top: 10px;
+}
+
+.cancelTransactionBtn {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
