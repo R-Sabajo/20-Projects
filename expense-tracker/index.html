@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -43,16 +46,36 @@
             <input type="text" id="text" placeholder="Enter text..." required />
           </div>
           <div class="form-control">
-            <label for="amount"
-              >Amount <br />
-              <p class="amount-info">(negative - expense, positive - income)</p>
-            </label>
+            <label for="amount">Amount <br /> </label>
+
             <input
               type="number"
               id="amount"
               placeholder="Enter amount..."
               required
             />
+          </div>
+          <p>Please select a transaction type</p>
+          <div class="amount-info">
+            <div class="form-control">
+              <input
+                type="radio"
+                name="amountInfo"
+                id="income"
+                value="income"
+              />
+              <label class="incomeRadio" for="income">Income</label>
+            </div>
+            <div class="form-control">
+              <input
+                type="radio"
+                name="amountInfo"
+                id="expense"
+                value="expense"
+                checked="checked"
+              />
+              <label class="expenseRadio" for="expense">Expense</label>
+            </div>
           </div>
           <button class="btn">Add transaction</button>
         </form>

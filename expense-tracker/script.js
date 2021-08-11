@@ -5,6 +5,7 @@ const list = document.getElementById('list');
 const form = document.getElementById('form');
 const text = document.getElementById('text');
 const amount = document.getElementById('amount');
+
 const newTransactionBtn = document.getElementById('newTransaction');
 const newTransactionForm = document.getElementById('newTransactionForm');
 const cancelTransactionBtn = document.getElementById('cancelTransactionBtn');
@@ -38,10 +39,16 @@ const hideForm = () => {
 const addTransaction = e => {
   e.preventDefault();
 
+  const plusMinus =
+    document.querySelector('input[name="amountInfo"]:checked').value ===
+    'expense'
+      ? -1
+      : 1;
+
   const transaction = {
     id: generateID(),
     text: text.value,
-    amount: +amount.value,
+    amount: +amount.value * plusMinus,
   };
 
   transactions.push(transaction);
@@ -71,7 +78,7 @@ const addTransactionDOM = transaction => {
   item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
 
   item.innerHTML = `
-  ${transaction.text} <span>${sign}${Math.abs(
+  ${transaction.text} <span>€${sign}${Math.abs(
     transaction.amount
   )}</span> <button class="delete-btn" onclick="removeTransaction(${
     transaction.id
