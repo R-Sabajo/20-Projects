@@ -166,11 +166,13 @@ input[type='number'] {
 
 .newTransactionForm {
   position: fixed;
+  inset: 0;
   background: #fff;
   width: 100vw;
+  margin: 0 auto;
+  max-width: 700px;
   height: 100vh;
-  padding: 10px;
-  inset: 0;
+  padding: 30px 20px;
   border: 1px solid #bbb;
   border-radius: 5px;
   opacity: 0;
@@ -191,6 +193,16 @@ input[type='radio'] {
   position: absolute;
 }
 
+.radio-label-box:first-of-type {
+  width: 50%;
+  padding: 0 10px 0 0;
+}
+
+.radio-label-box:last-of-type {
+  width: 50%;
+  padding: 0 0 0 10px;
+}
+
 .incomeRadio,
 .expenseRadio {
   cursor: pointer;
@@ -204,7 +216,7 @@ input[type='radio'] {
   border-radius: 5px;
   margin-bottom: 10px;
   text-align: center;
-  width: 45vw;
+  width: 100%;
   transition: all ease-in-out 150ms;
 }
 

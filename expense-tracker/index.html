@@ -9,6 +9,19 @@
     />
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#9c88ff" />
+    <meta name="theme-color" content="#9c88ff" />
   </head>
   <body>
     <h1>Expense Tracker</h1>
@@ -57,7 +70,7 @@
           </div>
           <p>Please select a transaction type</p>
           <div class="amount-info">
-            <div class="form-control">
+            <div class="radio-label-box">
               <input
                 type="radio"
                 name="amountInfo"
@@ -66,7 +79,7 @@
               />
               <label class="incomeRadio" for="income">Income</label>
             </div>
-            <div class="form-control">
+            <div class="radio-label-box">
               <input
                 type="radio"
                 name="amountInfo"

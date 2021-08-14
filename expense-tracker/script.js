@@ -10,14 +10,6 @@ const newTransactionBtn = document.getElementById('newTransaction');
 const newTransactionForm = document.getElementById('newTransactionForm');
 const cancelTransactionBtn = document.getElementById('cancelTransactionBtn');
 
-// const dummyTransactions = [
-//   { id: 0, text: 'Caapi', amount: -100 },
-//   { id: 1, text: 'Jurema', amount: -40 },
-//   { id: 2, text: 'Food', amount: -60 },
-//   { id: 3, text: 'Aya Ceremony', amount: 440 },
-//   { id: 4, text: 'Website', amount: 700 },
-// ];
-
 const localStorageTransactions = JSON.parse(
   localStorage.getItem('transactions')
 );
@@ -39,18 +31,21 @@ const hideForm = () => {
 const addTransaction = e => {
   e.preventDefault();
 
+  // Check which radio button is selected. Expense or Income and return a negative or positive number to multiply the transaction amount with
   const plusMinus =
     document.querySelector('input[name="amountInfo"]:checked').value ===
     'expense'
       ? -1
       : 1;
 
+  // create transaction object
   const transaction = {
     id: generateID(),
     text: text.value,
     amount: +amount.value * plusMinus,
   };
 
+  // push transaction to the transactions array
   transactions.push(transaction);
 
   addTransactionDOM(transaction);
@@ -139,3 +134,14 @@ form.addEventListener('submit', addTransaction);
 newTransactionBtn.addEventListener('click', showForm);
 
 cancelTransactionBtn.addEventListener('click', hideForm);
+
+// Serviceworker
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/serviceWorker.js')
+      .then(res => console.log('service worker registered'))
+      .catch(err => console.log('service worker NOT registered', err));
+  });
+}
