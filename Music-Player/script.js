@@ -10,7 +10,15 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 //  Song titles
-const songs = ['Israel Song', 'Nana', 'Valor do Pedido', 'Agua de Estrellas'];
+const songs = [
+  'Israel Song',
+  'Nana',
+  'Valor do Pedido',
+  'Agua de Estrellas',
+  'Noku mana',
+];
+
+const lyrics = [];
 
 // Keep track of Song
 let songIndex = 0;
